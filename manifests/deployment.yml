@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "clusterkube-983f"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "clusterkube-983f"
+  template:
+    metadata:
+      labels:
+        app: "clusterkube-983f"
+    spec:
+      containers:
+        - name: "clusterkube-983f"
+          image: "dockerregistry1232.azurecr.io/clusterkube"
+          ports:
+          - containerPort: 80
