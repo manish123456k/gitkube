@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "clusterkube-dff1"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "clusterkube-dff1"
+  template:
+    metadata:
+      labels:
+        app: "clusterkube-dff1"
+    spec:
+      containers:
+        - name: "clusterkube-dff1"
+          image: "dockerregistry1232.azurecr.io/clusterkube"
+          ports:
+          - containerPort: 80
